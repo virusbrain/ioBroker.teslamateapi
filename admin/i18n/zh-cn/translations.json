@@ -1,0 +1,11 @@
+{
+    "Options": "选项",
+    "TeslaMateAPI URL": "TeslaMateAPI 网址",
+    "URL to the TeslaMateAPI service": "TeslaMateAPI 服务的 URL",
+    "Access token": "访问令牌",
+    "The access token for the TeslaMateAPI service": "TeslaMateAPI 服务的访问令牌",
+    "Additonal headers": "附加标题",
+    "List of additional headers. This may be useful when your TeslaMate API requires addtional headers to allow connection.": "附加标题列表。当您的 TeslaMate API 需要附加标头以允许连接时，这可能很有用。",
+    "Force command execution": "强制执行命令",
+    "If this option is enabled, the adapter will wake up the car when it sleeps when a command was sent.": "如果启用此选项，则适配器将在发送命令时在休眠时唤醒汽车。"
+}

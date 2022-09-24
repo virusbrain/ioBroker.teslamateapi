@@ -1,0 +1,11 @@
+{
+    "Options": "Opties",
+    "TeslaMateAPI URL": "TeslaMateAPI-URL",
+    "URL to the TeslaMateAPI service": "URL naar de TeslaMateAPI-service",
+    "Access token": "Toegangstoken",
+    "The access token for the TeslaMateAPI service": "Het toegangstoken voor de TeslaMateAPI-service",
+    "Additonal headers": "Extra koppen",
+    "List of additional headers. This may be useful when your TeslaMate API requires addtional headers to allow connection.": "Lijst met extra koppen. Dit kan handig zijn wanneer uw TeslaMate API extra headers vereist om verbinding mogelijk te maken.",
+    "Force command execution": "Uitvoering commando forceren",
+    "If this option is enabled, the adapter will wake up the car when it sleeps when a command was sent.": "Als deze optie is ingeschakeld, zal de adapter de auto wekken wanneer deze slaapt wanneer een opdracht is verzonden."
+}

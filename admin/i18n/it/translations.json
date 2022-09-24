@@ -1,0 +1,11 @@
+{
+    "Options": "Opzioni",
+    "TeslaMateAPI URL": "URL dell'API TeslaMate",
+    "URL to the TeslaMateAPI service": "URL al servizio TeslaMateAPI",
+    "Access token": "Token di accesso",
+    "The access token for the TeslaMateAPI service": "Il token di accesso per il servizio TeslaMateAPI",
+    "Additonal headers": "Intestazioni aggiuntive",
+    "List of additional headers. This may be useful when your TeslaMate API requires addtional headers to allow connection.": "Elenco di intestazioni aggiuntive. Ciò può essere utile quando l'API TeslaMate richiede intestazioni aggiuntive per consentire la connessione.",
+    "Force command execution": "Forza l'esecuzione del comando",
+    "If this option is enabled, the adapter will wake up the car when it sleeps when a command was sent.": "Se questa opzione è abilitata, l'adattatore riattiverà l'auto quando è in modalità di sospensione quando è stato inviato un comando."
+}
