@@ -1,0 +1,52 @@
+{
+  "i18n": true,
+  "type": "tabs",
+  "items": {
+    "_options": {
+      "type": "panel",
+      "label": "Options",
+      "items": {
+        "serverUrl": {
+          "type": "text",
+          "sm": 12,
+          "md": 6,
+          "lg": 6,
+          "label": "TeslaMateAPI URL",
+          "help": "URL to the TeslaMateAPI service"
+        },
+        "access_token": {
+          "type": "text",
+          "sm": 12,
+          "md": 6,
+          "lg": 6,
+          "label": "Access token",
+          "help": "The access token for the TeslaMateAPI service"
+        },
+        "refresh_interval": {
+          "type": "text",
+          "sm": 12,
+          "md": 6,
+          "lg": 6,
+          "label": "Refresh interval",
+          "help": "In which interval the status should be pulled."
+        },
+        "headers": {
+          "type": "chips",
+          "sm": 12,
+          "md": 6,
+          "lg": 6,
+          "label": "Additonal headers",
+          "help": "List of additional headers. This may be useful when your TeslaMate API requires addtional headers to allow connection."
+        },
+        "force_command_execution": {
+          "type": "checkbox",
+          "sm": 12,
+          "md": 6,
+          "lg": 6,
+          "label": "Force command execution",
+          "help": "If this option is enabled, the adapter will wake up the car when it sleeps when a command was sent."
+        }
+      }
+    }
+  }
+}

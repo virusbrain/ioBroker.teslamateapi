@@ -1,0 +1,111 @@
+{
+    "common": {
+        "name": "teslamateapi",
+        "version": "0.0.0",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "TeslaMate API",
+        "titleLang": {
+            "en": "TeslaMate API",
+            "de": "TeslaMate-API",
+            "ru": "TeslaMate API",
+            "pt": "API TeslaMate",
+            "nl": "TeslaMate-API",
+            "fr": "API TeslaMate",
+            "it": "API TeslaMate",
+            "es": "API de TeslaMate",
+            "pl": "TeslaMate API",
+            "zh-cn": "特斯拉伴侣 API"
+        },
+        "desc": {
+            "en": "Control your car via the teslamateapi!",
+            "de": "Steuern Sie Ihr Auto über das teslamateapi!",
+            "ru": "Управляйте своим автомобилем через teslamateapi!",
+            "pt": "Controle seu carro através do teslamateapi!",
+            "nl": "Bestuur je auto via de teslamateapi!",
+            "fr": "Control your car via the teslamateapi!",
+            "it": "Control your car via the teslamateapi!",
+            "es": "¡Controla tu coche a través del teslamateapi!",
+            "pl": "Kontroluj swój samochód za pomocą teslamateapi!",
+            "zh-cn": "通过 teslamateapi 控制您的汽车！"
+        },
+        "authors": [
+            "virusbrain <github@eideo.de>"
+        ],
+        "keywords": [
+            "tesla",
+            "teslamate",
+            "teslamateapi"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "teslamateapi.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/virusbrain/ioBroker.teslamateapi/main/admin/teslamateapi.png",
+        "readme": "https://github.com/virusbrain/ioBroker.teslamateapi/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "vehicle",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json"
+        },
+        "eraseOnUpload": true,
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.0.0"
+            }
+        ]
+    },
+    "native": {
+        "serverUrl": "",
+        "access_token": "",
+        "headers": [],
+        "refresh_interval": 30,
+        "force_command_execution": true
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
+}
