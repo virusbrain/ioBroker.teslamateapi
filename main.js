@@ -103,8 +103,8 @@ class Teslamateapi extends utils.Adapter {
         try {
             this.setState('info.connection', false, true);
 
-            clearTimeout(this.connectionTestInterval);
-            clearTimeout(this.refreshStatusInterval);
+            clearInterval(this.connectionTestInterval);
+            clearInterval(this.refreshStatusInterval);
 
             callback();
         } catch (e) {
