@@ -38,6 +38,10 @@ With this adapter you can also set some settings of your car. Currently these ar
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (virusbrain) Fixed clearInterval
+* (virusbrain) Fixed logo size
+
 ### 0.0.1 (2022-09-24)
 * (virusbrain) Intial beta elease
 
