@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "news": {
+      "0.0.2": {
+        "en": "Fixed clearInterval\nFixed logo size",
+        "de": "Klares Interval\nFeste Logogröße",
+        "ru": "Фиксированный ClearInterval\nФиксированный размер логотипа",
+        "pt": "Corrigido claroInterval\nTamanho do logotipo fixo",
+        "nl": "Quality over Quantity (QoQ) Releases Vertaling:\nQuality over Quantity (QoQ) Releases Vertaling:",
+        "fr": "Fixe netteInterval\nTaille du logo fixe",
+        "it": "Intervallo fisso\nDimensioni del logo fisso",
+        "es": "Intervalo fijo\nTamaño fijo del logotipo",
+        "pl": "Fixed clearInterval (ang.)\nLogotypowe",
+        "zh-cn": "B. 固定的明显互动\n固定的伐木规模"
+      },
       "0.0.1": {
         "en": "initial release",
         "de": "Erstveröffentlichung",
