@@ -86,11 +86,11 @@ class Teslamateapi extends utils.Adapter {
 
         this.subscribeStates('*');
 
-        this.connectionTestInterval = setInterval(async () => {
+        this.connectionTestInterval = this.setInterval(async () => {
             await this.testConnection();
         }, 60000);
 
-        this.refreshStatusInterval = setInterval(async () => {
+        this.refreshStatusInterval = this.setInterval(async () => {
             await this.refreshStatus();
         }, this.config.refresh_interval * 1000);
     }
@@ -103,8 +103,8 @@ class Teslamateapi extends utils.Adapter {
         try {
             this.setState('info.connection', false, true);
 
-            clearInterval(this.connectionTestInterval);
-            clearInterval(this.refreshStatusInterval);
+            this.clearInterval(this.connectionTestInterval);
+            this.clearInterval(this.refreshStatusInterval);
 
             callback();
         } catch (e) {
@@ -175,7 +175,7 @@ class Teslamateapi extends utils.Adapter {
                     }
 
                     wakeUpTimeout += 2000;
-                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    await this.delay(2000);
                     await this.refreshStatus();
                     carState = await this.getStateAsync('cars.' + vin + '.status.state');
                 }
