@@ -38,7 +38,7 @@ With this adapter you can also set some settings of your car. Currently these ar
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.0.3 (2022-10-11)
 * (virusbrain) Second try to make intervals unload safe
 
 ### 0.0.2 (2022-09-27)

@@ -1,6 +1,6 @@
 {
   "name": "iobroker.teslamateapi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Control your car via the teslamateapi!",
   "author": {
     "name": "virusbrain",

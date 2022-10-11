@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "news": {
+      "0.0.3": {
+        "en": "Second try to make intervals unload safe",
+        "de": "Zweiter Versuch, Intervalle entladen sicher zu machen",
+        "ru": "Вторая попытка сделать интервалы разгрузить безопасно",
+        "pt": "Segunda tentativa de fazer intervalos descarregar seguro",
+        "nl": "Tweede poging om interval veilig te maken",
+        "fr": "Deuxièmement, essayez de faire des intervalles décharger en toute sécurité",
+        "it": "Secondo tentativo di rendere gli intervalli di scarico sicuro",
+        "es": "Segundo intento hacer que los intervalos de descarga seguro",
+        "pl": "Druga próba wykonania odstępów bezpiecznie rozładunkowych",
+        "zh-cn": "第二期尝试每隔一次安全工作"
+      },
       "0.0.2": {
         "en": "Fixed clearInterval\nFixed logo size",
         "de": "Klares Interval\nFeste Logogröße",
