@@ -27,6 +27,7 @@ class Teslamateapi extends utils.Adapter {
         });
 
         this.teslamateApiClient = null;
+        this.requestTimeout = 3000;
 
         this.connectionTestInterval = null;
         this.refreshStatusInterval = null;
@@ -55,6 +56,11 @@ class Teslamateapi extends utils.Adapter {
             return;
         }
 
+        if ( this.config.refresh_interval * 1000 < this.requestTimeout ) {
+            this.log.warn(`Your configured refresh interval is lower than three seconds. The refresh interval will be set to three seconds!`);
+            this.config.refresh_interval = this.requestTimeout / 1000;
+        }
+
         const requestHeaders = {};
         if ( this.config.headers.length > 0 ) {
             this.config.headers.forEach((header) => {
@@ -70,7 +76,7 @@ class Teslamateapi extends utils.Adapter {
         requestHeaders[`Authorization`] = 'Bearer ' + this.config.access_token;
         this.teslamateApiClient = axios.create({
             baseURL: `${this.config.serverUrl}`,
-            timeout: 3000,
+            timeout: this.requestTimeout,
             responseType: 'json',
             responseEncoding: 'utf8',
             headers: requestHeaders,
