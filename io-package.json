@@ -101,6 +101,8 @@
       }
     ]
   },
+  "encryptedNative": ["access_token"],
+  "protectedNative": ["access_token"],
   "native": {
     "serverUrl": "",
     "access_token": "",
