@@ -31,6 +31,8 @@ class Teslamateapi extends utils.Adapter {
         this.connectionTestInterval = null;
         this.refreshStatusInterval = null;
 
+        this.objectsCreated = [];
+
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
         this.on('unload', this.onUnload.bind(this));
@@ -223,32 +225,40 @@ class Teslamateapi extends utils.Adapter {
                 for (const key in statuses) {
                     //console.log(key, statuses[key]);
                     if ( statuses[key] != null && typeof statuses[key] !== 'object' ) {
-                        await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key, {
-                            type: 'state',
-                            common: {
-                                name: key,
-                                type: typeof statuses[key],
-                                role: '',
-                                write: false,
-                                read: true
-                            },
-                            native: {}
-                        });
-                        this.setStateAsync('cars.' + car.car_details.vin + '.status.' + key, statuses[key], true);
-                    } else {
-                        for ( const subKey in statuses[key] ) {
-                            await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key + '.' + subKey, {
+                        const objectId = 'cars.' + car.car_details.vin + '.status.' + key;
+                        if ( !this.objectsCreated.includes(objectId) ) {
+                            await this.setObjectNotExistsAsync(objectId, {
                                 type: 'state',
                                 common: {
-                                    name: subKey,
-                                    type: typeof statuses[key][subKey],
+                                    name: key,
+                                    type: typeof statuses[key],
                                     role: '',
                                     write: false,
                                     read: true
                                 },
                                 native: {}
                             });
-                            this.setStateAsync('cars.' + car.car_details.vin + '.status.' + key + '.' + subKey, statuses[key][subKey], true);
+                            this.objectsCreated.push(objectId);
+                        }
+                        this.setStateAsync(objectId, statuses[key], true);
+                    } else {
+                        for ( const subKey in statuses[key] ) {
+                            const objectId = 'cars.' + car.car_details.vin + '.status.' + key + '.' + subKey;
+                            if ( !this.objectsCreated.includes(objectId) ) {
+                                await this.setObjectNotExistsAsync(objectId, {
+                                    type: 'state',
+                                    common: {
+                                        name: subKey,
+                                        type: typeof statuses[key][subKey],
+                                        role: '',
+                                        write: false,
+                                        read: true
+                                    },
+                                    native: {}
+                                });
+                                this.objectsCreated.push(objectId);
+                            }
+                            this.setStateAsync(objectId, statuses[key][subKey], true);
                         }
                     }
                 }
@@ -275,62 +285,76 @@ class Teslamateapi extends utils.Adapter {
             settings = settings.getSettingsMap();
 
             for ( const car of cars) {
-                await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.car_id', {
-                    type: 'state',
-                    common: {
-                        name: 'car_id',
-                        type: typeof car.car_id,
-                        role: '',
-                        write: false,
-                        read: true
-                    },
-                    native: {}
-                });
-                this.setStateAsync('cars.' + car.car_details.vin + '.info.car_id', car.car_id, true);
-
-                for (const [prop, val] of Object.entries(car.car_details)) {
-                    await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.' + prop, {
+                const objectId = 'cars.' + car.car_details.vin + '.info.car_id';
+                if ( !this.objectsCreated.includes(objectId) ) {
+                    await this.setObjectNotExistsAsync(objectId, {
                         type: 'state',
                         common: {
-                            name: prop,
-                            type: typeof val,
+                            name: 'car_id',
+                            type: typeof car.car_id,
                             role: '',
                             write: false,
                             read: true
                         },
                         native: {}
                     });
-                    this.setStateAsync('cars.' + car.car_details.vin + '.info.' + prop, val, true);
+                    this.objectsCreated.push(objectId);
+                }
+                this.setStateAsync(objectId, car.car_id, true);
+
+                for (const [prop, val] of Object.entries(car.car_details)) {
+                    const objectId = 'cars.' + car.car_details.vin + '.info.' + prop;
+                    if ( !this.objectsCreated.includes(objectId) ) {
+                        await this.setObjectNotExistsAsync(objectId, {
+                            type: 'state',
+                            common: {
+                                name: prop,
+                                type: typeof val,
+                                role: '',
+                                write: false,
+                                read: true
+                            },
+                            native: {}
+                        });
+                        this.objectsCreated.push(objectId);
+                    }
+                    this.setStateAsync(objectId, val, true);
                 }
 
                 // Populate commands:
                 commands.forEach(async(command) => {
-                    await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.commands.' + command.command, {
-                        type: 'state',
-                        common: {
-                            name: command.name || '',
-                            type: command.type || 'boolean',
-                            role: command.role || 'button',
-                            write: true,
-                            read: true,
-                        },
-                        native: {},
-                    }).catch(e => {this.log.error(e);});
+                    const objectId = 'cars.' + car.car_details.vin + '.commands.' + command.command;
+                    if ( !this.objectsCreated.includes(objectId) ) {
+                        await this.setObjectNotExistsAsync(objectId, {
+                            type: 'state',
+                            common: {
+                                name: command.name || '',
+                                type: command.type || 'boolean',
+                                role: command.role || 'button',
+                                write: true,
+                                read: true,
+                            },
+                            native: {},
+                        }).catch(e => {this.log.error(e);});
+                    }
                 });
 
                 // Populate settings:
                 settings.forEach(async(setting) => {
-                    await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.settings.' + setting.setting, {
-                        type: 'state',
-                        common: {
-                            name: setting.setting || '',
-                            type: setting.type || 'string',
-                            role: 'value',
-                            write: true,
-                            read: true,
-                        },
-                        native: {},
-                    }).catch(e => {this.log.error(e);});
+                    const objectId = 'cars.' + car.car_details.vin + '.settings.' + setting.setting;
+                    if ( !this.objectsCreated.includes(objectId) ) {
+                        await this.setObjectNotExistsAsync(objectId, {
+                            type: 'state',
+                            common: {
+                                name: setting.setting || '',
+                                type: setting.type || 'string',
+                                role: 'value',
+                                write: true,
+                                read: true,
+                            },
+                            native: {},
+                        }).catch(e => {this.log.error(e);});
+                    }
                 });
             }
         } catch (err) {
