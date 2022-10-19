@@ -217,7 +217,7 @@ class Teslamateapi extends utils.Adapter {
 
     async refreshStatus() {
         try {
-            let response = await this.teslamateApiClient.get('/v1/cars');
+            const response = await this.teslamateApiClient.get('/v1/cars');
             this.log.debug('Refreshing status');
             const cars = response.data.data.cars;
             // this.log.debug(`refreshStatus() cars: ${JSON.stringify(cars)}`);
@@ -277,7 +277,7 @@ class Teslamateapi extends utils.Adapter {
 
     async getCarsAndPopulateObjects() {
         try {
-            let response = await this.teslamateApiClient.get('/v1/cars');
+            const response = await this.teslamateApiClient.get('/v1/cars');
 
             // this.log.debug(`getCars() ${JSON.stringify(response.status)}: ${JSON.stringify(response.data)}`);
             const cars = response.data.data.cars;
