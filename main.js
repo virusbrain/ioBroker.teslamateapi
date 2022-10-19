@@ -118,7 +118,7 @@ class Teslamateapi extends utils.Adapter {
      * @param {ioBroker.State | null | undefined} state
      */
     onStateChange(id, state) {
-        if (state) {
+        if ( state && state.ack == false ) {
             // The state was changed
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
@@ -129,7 +129,7 @@ class Teslamateapi extends utils.Adapter {
                 const command = id.split('.')[5];
 
                 this.sendCommand(vin, command);
-            } else if ( id.includes('.settings.') && state.ack == false ) {
+            } else if ( id.includes('.settings.') ) {
                 // teslamateapi.0.cars.5YJ3E7EAXKF372359.settings.charge_limit
                 const settings = new SettingsMap(this);
                 const vin = id.split('.')[3];
