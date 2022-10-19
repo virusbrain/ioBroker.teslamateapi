@@ -223,7 +223,7 @@ class Teslamateapi extends utils.Adapter {
                 for (const key in statuses) {
                     //console.log(key, statuses[key]);
                     if ( statuses[key] != null && typeof statuses[key] !== 'object' ) {
-                        this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key, {
+                        await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key, {
                             type: 'state',
                             common: {
                                 name: key,
@@ -237,7 +237,7 @@ class Teslamateapi extends utils.Adapter {
                         this.setStateAsync('cars.' + car.car_details.vin + '.status.' + key, statuses[key], true);
                     } else {
                         for ( const subKey in statuses[key] ) {
-                            this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key + '.' + subKey, {
+                            await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.status.' + key + '.' + subKey, {
                                 type: 'state',
                                 common: {
                                     name: subKey,
@@ -274,8 +274,8 @@ class Teslamateapi extends utils.Adapter {
             let settings = new SettingsMap(this);
             settings = settings.getSettingsMap();
 
-            cars.forEach( (car) => {
-                this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.car_id', {
+            for ( const car of cars) {
+                await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.car_id', {
                     type: 'state',
                     common: {
                         name: 'car_id',
@@ -289,7 +289,7 @@ class Teslamateapi extends utils.Adapter {
                 this.setStateAsync('cars.' + car.car_details.vin + '.info.car_id', car.car_id, true);
 
                 for (const [prop, val] of Object.entries(car.car_details)) {
-                    this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.' + prop, {
+                    await this.setObjectNotExistsAsync('cars.' + car.car_details.vin + '.info.' + prop, {
                         type: 'state',
                         common: {
                             name: prop,
@@ -332,9 +332,7 @@ class Teslamateapi extends utils.Adapter {
                         native: {},
                     }).catch(e => {this.log.error(e);});
                 });
-            });
-
-
+            }
         } catch (err) {
             this.log.error(err);
             this.setState('info.connection', false, true);
