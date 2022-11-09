@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "news": {
+      "0.0.5": {
+        "en": "Updated dependencies",
+        "de": "Aktualisierte Abhängigkeiten",
+        "ru": "Обновленные зависимости",
+        "pt": "Dependências atualizadas",
+        "nl": "Verouderde afhankelijkheid",
+        "fr": "Mise à jour des dépendances",
+        "it": "Dipendenze aggiornate",
+        "es": "Dependencias actualizadas",
+        "pl": "Zależność od upoważnienia",
+        "uk": "Оновлені залежності",
+        "zh-cn": "A. 最新依赖情况"
+      },
       "0.0.4": {
         "en": "Fixed forced wake up.",
         "de": "Feste Zwangsaufwache.",
