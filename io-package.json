@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "news": {
+      "0.0.7": {
+        "en": "Fix automatic wake_up",
+        "de": "Automatische Wake_up reparieren",
+        "ru": "Fix автоматический wak_up",
+        "pt": "Fix automático wake_up",
+        "nl": "Vertaling:",
+        "fr": "Correction automatique wake_up",
+        "it": "Risolvere la sveglia automatica",
+        "es": "Fijar el despertar automático_up",
+        "pl": "Fix automatic wake",
+        "uk": "Виправлення автоматичної проби_up",
+        "zh-cn": "自动后继"
+      },
       "0.0.6": {
         "en": "Fixed axios import",
         "de": "Feste Axios Import",
