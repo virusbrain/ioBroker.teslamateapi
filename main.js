@@ -7,7 +7,7 @@
 // The adapter-core module gives you access to the core ioBroker functions
 // you need to create an adapter
 const utils = require('@iobroker/adapter-core');
-const axios = require('axios').default;
+const axios = require('axios');
 const https = require('https');
 const SettingsMap = require('./lib/settingsMap');
 const CommandMap = require('./lib/commandMap');
