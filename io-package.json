@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "news": {
+      "0.0.4": {
+        "en": "Fixed forced wake up.",
+        "de": "Feste Zwangsaufwache.",
+        "ru": "Исправлена вынужденная просыпаться.",
+        "pt": "Acordo forçado fixo.",
+        "nl": "Wordt gedwongen wakker.",
+        "fr": "Réveillement forcé.",
+        "it": "Risolto forzato svegliarsi.",
+        "es": "Arreglado forzado despierta.",
+        "pl": "Fixed zmuszał się.",
+        "uk": "Виправлена вимушена пробудка.",
+        "zh-cn": "随后被迫强迫。."
+      },
       "0.0.3": {
         "en": "Second try to make intervals unload safe",
         "de": "Zweiter Versuch, Intervalle entladen sicher zu machen",
@@ -101,8 +114,12 @@
       }
     ]
   },
-  "encryptedNative": ["access_token"],
-  "protectedNative": ["access_token"],
+  "encryptedNative": [
+    "access_token"
+  ],
+  "protectedNative": [
+    "access_token"
+  ],
   "native": {
     "serverUrl": "",
     "access_token": "",
