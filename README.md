@@ -38,6 +38,9 @@ With this adapter you can also set some settings of your car. Currently these ar
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (virusbrain) Fixed axios import
+
 ### 0.0.5 (2022-11-09)
 * (virusbrain) Updated dependencies
 
