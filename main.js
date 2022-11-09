@@ -165,7 +165,7 @@ class Teslamateapi extends utils.Adapter {
             let carState = await this.getStateAsync('cars.' + vin + '.status.state');
             if ( command != 'wake_up' &&
                  this.config.force_command_execution == true &&
-                 carState && carState.val != 'online') {
+                 carState && carState.val == 'suspended') {
                 // Send the wake up command
                 await this.sendCommand(vin, 'wake_up');
 
