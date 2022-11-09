@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "news": {
+      "0.0.6": {
+        "en": "Fixed axios import",
+        "de": "Feste Axios Import",
+        "ru": "Фиксированный импорт осиоса",
+        "pt": "Importação de axios fixos",
+        "nl": "Quality over Quantity (QoQ) Releases Vertaling:",
+        "fr": "Importation d ' axios fixes",
+        "it": "Importazione di assi fissi",
+        "es": "Importación de axios fijos",
+        "pl": "Axie importowane",
+        "uk": "Виправлено імпорт аксіосу",
+        "zh-cn": "固定轴线进口"
+      },
       "0.0.5": {
         "en": "Updated dependencies",
         "de": "Aktualisierte Abhängigkeiten",
