@@ -29,7 +29,7 @@
     "@types/mocha": "^10.0.1",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^8.31.0",
+    "eslint": "^8.33.0",
     "eslint-plugin-react": "^7.31.11",
     "mocha": "^10.2.0",
     "sinon": "^14.0.2",
