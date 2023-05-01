@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "teslamateapi",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "news": {
+      "0.0.8": {
+        "en": "Updated dependencies",
+        "de": "Aktualisierte Abhängigkeiten",
+        "ru": "Обновленные зависимости",
+        "pt": "Dependências atualizadas",
+        "nl": "Verouderde afhankelijkheid",
+        "fr": "Mise à jour des dépendances",
+        "it": "Dipendenze aggiornate",
+        "es": "Dependencias actualizadas",
+        "pl": "Zależność od upoważnienia",
+        "uk": "Оновлені залежності",
+        "zh-cn": "A. 最新依赖情况"
+      },
       "0.0.7": {
         "en": "Fix automatic wake_up",
         "de": "Automatische Wake_up reparieren",
@@ -78,18 +91,6 @@
         "es": "Intervalo fijo\nTamaño fijo del logotipo",
         "pl": "Fixed clearInterval (ang.)\nLogotypowe",
         "zh-cn": "B. 固定的明显互动\n固定的伐木规模"
-      },
-      "0.0.1": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
       }
     },
     "title": "TeslaMate API",
